@@ -22,18 +22,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        UIView.animate(withDuration: 1.0) {
-            self.mainText1.alpha = 1.0
-            self.mainText2.alpha = 1.0
+        UIView.animate(withDuration: 0.5) {
+            self.mainText1.alpha = 0.5
+            self.mainText2.alpha = 0.5
         }
         
-        UIView.animate(withDuration: 1.5) {
-            self.matrixImg.alpha = 1.0
+        UIView.animate(withDuration: 0.5) {
+            self.matrixImg.alpha = 0.5
         }
         
-        UIView.animate(withDuration: 2.0) {
-            self.yesBtn.alpha = 1.0
-            self.noBtn.alpha = 1.0
+        UIView.animate(withDuration: 0.5) {
+            self.yesBtn.alpha = 0.5
+            self.noBtn.alpha = 0.5
         }
         
     }
