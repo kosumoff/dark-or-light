@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/kosumov/Projects/dark-or-light/dark-or-light.xcodeproj">
+      location = "group:../../../Downloads/morpheus.mp3">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

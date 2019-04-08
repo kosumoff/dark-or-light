@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     @IBOutlet weak var noBtn: UIButton!
@@ -18,9 +19,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainText1: UILabel!
     @IBOutlet weak var mainText2: UILabel!
     
+    var audioPlayer: AVAudioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        do {
+            let musicFile = Bundle.main.path(forResource: "morpheus", ofType: "mp3")
+            try audioPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: musicFile!))
+        }
+        catch {
+            print(error)
+        }
         
         UIView.animate(withDuration: 1) {
             self.mainText1.alpha = 1
@@ -35,6 +46,7 @@ class ViewController: UIViewController {
             self.yesBtn.alpha = 1
             self.noBtn.alpha = 1
         }
+        audioPlayer.play()
         
     }
 
@@ -51,9 +63,9 @@ class ViewController: UIViewController {
         let h = Int(hour)!
         exitBtn.isHidden = false
         
-        if (h >= 7) && (h <= 19) {
+        if (h >= 7) && (h <= 20) {
             viewLight.isHidden = false
-        } else {
+        } else if (h > 20) || (h < 7){
             viewDark.isHidden = false
         }
     }
